@@ -1,0 +1,108 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-02-27T22:37:19.595Z",
+    "end": "2025-02-27T22:37:47.296Z",
+    "duration": 27701
+  },
+  "results": [
+    {
+      "uuid": "1173fb02-4113-4697-b4a1-e00aedd606fa",
+      "title": "",
+      "fullFile": "cypress/e2e/alvaras/alvaras.cy.js",
+      "file": "cypress/e2e/alvaras/alvaras.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0b83a696-87d6-4267-b83b-2c5fcce96570",
+          "title": "Manter Dados de Alvarás",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Emitir novo alvará",
+              "fullTitle": "Manter Dados de Alvarás Emitir novo alvará",
+              "timedOut": null,
+              "duration": 27634,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.clearAllCookies();\ncy.clearAllSessionStorage();\ncy.clearAllLocalStorage();\ncy.visit('/');\ncy.login();\ncy.selecionarEntidade(\"ACADEMIA DA SAUDE: MAFRA EM FORMA\");\ncy.acessarMenu(\"Vigilância\");\ncy.acessarSubMenu(\"Vigilância Sanitária\");\ncy.acessarRotina(\"Requerimento/Protocolo\");\ncy.solicitarDocumento(\"Alvará\");\ncy.selecionarTipoAlvara(\"Alvará Inicial\");\ncy.informarDadosParaEmissaoAlvara();\ncy.validarMensagemExibida('Já existe um alvará inicial para o estabelecimento');",
+              "err": {},
+              "uuid": "9ec7d343-f318-44ee-8618-82a976b13280",
+              "parentUUID": "0b83a696-87d6-4267-b83b-2c5fcce96570",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9ec7d343-f318-44ee-8618-82a976b13280"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 27634,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "reportFilename": "[name]-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
