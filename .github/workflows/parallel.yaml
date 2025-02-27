@@ -1,0 +1,104 @@
+name: HaulSafe E2E Cypress Tests Parallel
+
+on:
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        containers: [accidents, company-documents, dashboard, dot, drivers, equipments, final-miles, integrations, jb-hunt, signup]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with: 
+          spec: ./cypress/e2e/${{ matrix.containers }}/*.js
+          config-file: cypress.config.js
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: result-${{ matrix.containers }}
+          path: cypress/reports/
+
+  merge-reports:
+    runs-on: ubuntu-latest
+    needs: cypress-run
+    if: always()
+
+    steps:
+      - name: Download All Reports
+        uses: actions/download-artifact@v3
+        if: always()
+        with:
+          path: ./cypress/reports
+
+      - name: Debug Downloaded Files
+        if: always()
+        run: |
+          echo "Downloaded files:"
+          ls -R ./cypress/reports
+      
+      - name: Merge Evidence into Single Folder
+        run: |
+          # Create a unified assets folder
+          mkdir -p ./cypress/reports/mochareports/assets
+
+          # Find and move all evidence files to the unified assets folder
+          find ./cypress/reports/ -type f -name "*.png" -exec mv {} ./cypress/reports/mochareports/assets/ \;
+
+      - name: Debug Unified Evidence Folder
+        run: |
+          echo "Files in unified assets folder:"
+          ls -R ./cypress/reports/mochareports/assets
+
+      - name: Install Report Dependencies
+        if: always()
+        run: |
+          npm install mochawesome-merge mochawesome-report-generator
+
+      - name: Merge Mocha Reports
+        if: always()
+        run: |
+          mkdir -p ./cypress/reports/mochareports
+          npx mochawesome-merge $(find ./cypress/reports/**/ -name '*.json' ! -name 'r.json') > ./cypress/reports/mochareports/merged-results.json
+          npx mochawesome-report-generator ./cypress/reports/mochareports/merged-results.json -o ./cypress/reports/mochareports
+
+
+
+    # for report in ./cypress/reports/result-*/mochareports/assets/*; do
+    #         if [ -d "$report" ]; then
+    #           test_name=$(basename "$report")
+    #           images=$(find "$report" -name "*.png" -type f)
+    #           for image in $images; do
+    #             sed -i "s|\"tests\": \\[|\"tests\": [{\"context\": {\"evidence\": \"$image\"}},|g" cypress/reports/mochareports/merged-results.json
+    #           done
+    #         fi
+    #       done
+
+
+      - name: Rename Report
+        run: mv ./cypress/reports/mochareports/merged-results.html ./cypress/reports/mochareports/index.html
+        if: always()
+
+      - name: Upload Final Report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: Final-Merged-Report
+          path: ./cypress/reports/mochareports
+
+      - name: Deploy Report to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./cypress/reports/mochareports
