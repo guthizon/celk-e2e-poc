@@ -5,6 +5,5 @@ package-lock.json
 cucumber-json
 cypress/downloads
 cypress/results
-cypress/reports
 cypress/videos
 .idea
