@@ -1,0 +1,119 @@
+name: Celk E2E Cypress Tests
+
+on:
+  # schedule:
+  #   - cron: '00 23 * * 0-6'
+  workflow_dispatch:
+    inputs:
+      feature:
+        description: 'select a feature to run a smoke test or select regression to run all'
+        required: true
+        default: 'regression'
+        type: choice
+        options:
+          - alvaras
+          - regression
+jobs:
+  cypress-run:
+    if: ${{ github.event_name == 'schedule' || github.event.inputs.feature == 'regression' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          command: npm run test
+        env:
+          password: ${{secrets.password}}
+
+      - name: Merge test results
+        run: npm run combine-reports
+        if: always()
+      
+      - name: Generate HTML report
+        run: npm run generate-report
+        if: always()
+      
+      - name: Change report name
+        run: mv cypress/reports/mochareports/report.html cypress/reports/mochareports/index.html
+        if: always()
+      
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: result
+          path: | 
+            cypress/reports
+      
+      - name: Upload test video
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos 
+      
+      - name: Deploy report to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: cypress/reports/mochareports
+
+      # - name: Slack Notification
+      #   run: npx test-results-reporter publish -c config.json
+      #   if: always()
+
+  smoke-tests:
+    if: ${{ github.event.inputs.feature != 'regression' && github.event_name != 'schedule'}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install
+      - name: Cypress run
+        uses: cypress-io/github-action@v5
+        with:
+          command: npx cypress run --spec cypress/e2e/${{ github.event.inputs.feature }}/*.js --browser electron --headless
+        env:
+          password: ${{secrets.password}}
+
+      - name: Merge test results
+        run: npm run combine-reports
+        if: always()
+      
+      - name: Generate HTML report
+        run: npm run generate-report
+        if: always()
+      
+      - name: Change report name
+        run: mv cypress/reports/mochareports/report.html cypress/reports/mochareports/index.html
+        if: always()
+      
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: result
+          path: | 
+            cypress/reports
+      
+      - name: Upload test video
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos 
+      
+      - name: Deploy report to Github Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: cypress/reports/mochareports
+
+      # - name: Slack Notification
+      #   run: npx test-results-reporter publish -c config.json
+      #   if: always()

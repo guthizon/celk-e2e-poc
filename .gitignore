@@ -1,0 +1,9 @@
+node_modules
+screenshots
+debug.log
+package-lock.json
+cucumber-json
+cypress/downloads
+cypress/results
+cypress/videos
+.idea
