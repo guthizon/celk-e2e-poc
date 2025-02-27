@@ -1,24 +1,24 @@
 {
   "stats": {
     "suites": 1,
-    "tests": 1,
+    "tests": 2,
     "passes": 1,
     "pending": 0,
-    "failures": 0,
-    "testsRegistered": 1,
-    "passPercent": 100,
+    "failures": 1,
+    "testsRegistered": 2,
+    "passPercent": 50,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2025-02-27T22:37:19.595Z",
-    "end": "2025-02-27T22:37:47.296Z",
-    "duration": 27701
+    "start": "2025-02-27T22:41:47.056Z",
+    "end": "2025-02-27T22:42:49.886Z",
+    "duration": 62830
   },
   "results": [
     {
-      "uuid": "1173fb02-4113-4697-b4a1-e00aedd606fa",
+      "uuid": "f2a51b8e-11e4-418e-a01d-0f91eea36dfe",
       "title": "",
       "fullFile": "cypress/e2e/alvaras/alvaras.cy.js",
       "file": "cypress/e2e/alvaras/alvaras.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0b83a696-87d6-4267-b83b-2c5fcce96570",
+          "uuid": "4a70138d-cfad-4e7f-bf4d-fb749b576cdf",
           "title": "Manter Dados de Alvarás",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Emitir novo alvará",
               "fullTitle": "Manter Dados de Alvarás Emitir novo alvará",
               "timedOut": null,
-              "duration": 27634,
+              "duration": 26686,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,44 @@
               "context": null,
               "code": "cy.clearAllCookies();\ncy.clearAllSessionStorage();\ncy.clearAllLocalStorage();\ncy.visit('/');\ncy.login();\ncy.selecionarEntidade(\"ACADEMIA DA SAUDE: MAFRA EM FORMA\");\ncy.acessarMenu(\"Vigilância\");\ncy.acessarSubMenu(\"Vigilância Sanitária\");\ncy.acessarRotina(\"Requerimento/Protocolo\");\ncy.solicitarDocumento(\"Alvará\");\ncy.selecionarTipoAlvara(\"Alvará Inicial\");\ncy.informarDadosParaEmissaoAlvara();\ncy.validarMensagemExibida('Já existe um alvará inicial para o estabelecimento');",
               "err": {},
-              "uuid": "9ec7d343-f318-44ee-8618-82a976b13280",
-              "parentUUID": "0b83a696-87d6-4267-b83b-2c5fcce96570",
+              "uuid": "1ed2fa8e-2e7d-47e0-8f1b-0980246b2085",
+              "parentUUID": "4a70138d-cfad-4e7f-bf4d-fb749b576cdf",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Emitir novo alvará falhar teste",
+              "fullTitle": "Manter Dados de Alvarás Emitir novo alvará falhar teste",
+              "timedOut": null,
+              "duration": 36019,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"assets/alvaras/alvaras.cy.js/Manter Dados de Alvarás -- Emitir novo alvará falhar teste (failed).png\"",
+              "code": "cy.clearAllCookies();\ncy.clearAllSessionStorage();\ncy.clearAllLocalStorage();\ncy.visit('/');\ncy.login();\ncy.selecionarEntidade(\"ACADEMIA DA SAUDE: MAFRA EM FORMA\");\ncy.acessarMenu(\"tesssste\");\ncy.acessarSubMenu(\"Vigilância Sanitária\");\ncy.acessarRotina(\"Requerimento/Protocolo\");\ncy.solicitarDocumento(\"Alvará\");\ncy.selecionarTipoAlvara(\"Alvará Inicial\");\ncy.informarDadosParaEmissaoAlvara();\ncy.validarMensagemExibida('Já existe um alvará inicial para o estabelecimento');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `//a/label[text()=\"tesssste\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `//a/label[text()=\"tesssste\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:17:7)",
+                "diff": null
+              },
+              "uuid": "91ea2221-4744-48f5-b201-265e57345270",
+              "parentUUID": "4a70138d-cfad-4e7f-bf4d-fb749b576cdf",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "9ec7d343-f318-44ee-8618-82a976b13280"
+            "1ed2fa8e-2e7d-47e0-8f1b-0980246b2085"
           ],
-          "failures": [],
+          "failures": [
+            "91ea2221-4744-48f5-b201-265e57345270"
+          ],
           "pending": [],
           "skipped": [],
-          "duration": 27634,
+          "duration": 62705,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
