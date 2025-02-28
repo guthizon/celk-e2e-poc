@@ -1,24 +1,24 @@
 {
   "stats": {
     "suites": 2,
-    "tests": 3,
-    "passes": 0,
+    "tests": 2,
+    "passes": 1,
     "pending": 0,
-    "failures": 3,
-    "testsRegistered": 3,
-    "passPercent": 0,
+    "failures": 1,
+    "testsRegistered": 2,
+    "passPercent": 50,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2025-02-28T13:59:35.740Z",
-    "end": "2025-02-28T14:01:14.445Z",
-    "duration": 98705
+    "start": "2025-02-28T14:03:33.806Z",
+    "end": "2025-02-28T14:04:36.071Z",
+    "duration": 62265
   },
   "results": [
     {
-      "uuid": "85d21142-6ceb-47ba-9854-98b0dea4ca5d",
+      "uuid": "210eaf31-2b62-4a9e-a6e0-f54124f8427b",
       "title": "",
       "fullFile": "cypress/e2e/alvaras/alvaras.cy.js",
       "file": "cypress/e2e/alvaras/alvaras.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e688eb9c-fdcf-4cdb-859d-340e2923f894",
+          "uuid": "e687d23c-869b-4135-b166-6c67f464c9ac",
           "title": "Manter Dados de Alvarás",
           "fullFile": "",
           "file": "",
@@ -38,56 +38,29 @@
               "title": "Emitir novo alvará",
               "fullTitle": "Manter Dados de Alvarás Emitir novo alvará",
               "timedOut": null,
-              "duration": 32079,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 23648,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
-              "context": "\"assets/alvaras/alvaras.cy.js/Manter Dados de Alvarás -- Emitir novo alvará (failed).png\"",
+              "context": null,
               "code": "cy.clearAllCookies();\ncy.clearAllSessionStorage();\ncy.clearAllLocalStorage();\ncy.visit('/');\ncy.login();\ncy.selecionarEntidade(\"ACADEMIA DA SAUDE: MAFRA EM FORMA\");\ncy.acessarMenu(\"Vigilância\");\ncy.acessarSubMenu(\"Vigilância Sanitária\");\ncy.acessarRotina(\"Requerimento/Protocolo\");\ncy.solicitarDocumento(\"Alvará\");\ncy.selecionarTipoAlvara(\"Alvará Inicial\");\ncy.informarDadosParaEmissaoAlvara();\ncy.validarMensagemExibida('Já existe um alvará inicial para o estabelecimento');",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:6:7)",
-                "diff": null
-              },
-              "uuid": "0d755bbd-e4aa-4404-9f17-bc806869f616",
-              "parentUUID": "e688eb9c-fdcf-4cdb-859d-340e2923f894",
-              "isHook": false,
-              "skipped": false
-            },
-            {
-              "title": "Emitir novo alvará falhar teste",
-              "fullTitle": "Manter Dados de Alvarás Emitir novo alvará falhar teste",
-              "timedOut": null,
-              "duration": 30898,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": "\"assets/alvaras/alvaras.cy.js/Manter Dados de Alvarás -- Emitir novo alvará falhar teste (failed).png\"",
-              "code": "cy.clearAllCookies();\ncy.clearAllSessionStorage();\ncy.clearAllLocalStorage();\ncy.visit('/');\ncy.login();\ncy.selecionarEntidade(\"ACADEMIA DA SAUDE: MAFRA EM FORMA\");\ncy.acessarMenu(\"tesssste\");\ncy.acessarSubMenu(\"Vigilância Sanitária\");\ncy.acessarRotina(\"Requerimento/Protocolo\");\ncy.solicitarDocumento(\"Alvará\");\ncy.selecionarTipoAlvara(\"Alvará Inicial\");\ncy.informarDadosParaEmissaoAlvara();\ncy.validarMensagemExibida('Já existe um alvará inicial para o estabelecimento');",
-              "err": {
-                "message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:6:7)",
-                "diff": null
-              },
-              "uuid": "912385a7-6820-4261-bff5-cd263ff7221f",
-              "parentUUID": "e688eb9c-fdcf-4cdb-859d-340e2923f894",
+              "err": {},
+              "uuid": "a3b1461a-65bb-4394-b5fc-2174d1205953",
+              "parentUUID": "e687d23c-869b-4135-b166-6c67f464c9ac",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "0d755bbd-e4aa-4404-9f17-bc806869f616",
-            "912385a7-6820-4261-bff5-cd263ff7221f"
+          "passes": [
+            "a3b1461a-65bb-4394-b5fc-2174d1205953"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 62977,
+          "duration": 23648,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -103,7 +76,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "f6baac59-9033-41a0-883d-3525a56e1cea",
+      "uuid": "3ca88ddc-862c-4720-b087-cd0bb402744e",
       "title": "",
       "fullFile": "cypress/e2e/teste/alvaras_fail.cy.js",
       "file": "cypress/e2e/teste/alvaras_fail.cy.js",
@@ -112,7 +85,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "7ef71302-d20d-4919-bd8e-84c7ffbad139",
+          "uuid": "25f1b2e3-02ed-45b8-8597-0e87ffade91b",
           "title": "Manter Dados de Alvarás fail",
           "fullFile": "",
           "file": "",
@@ -120,24 +93,24 @@
           "afterHooks": [],
           "tests": [
             {
-              "title": "Emitir novo alvará ddd",
-              "fullTitle": "Manter Dados de Alvarás fail Emitir novo alvará ddd",
+              "title": "Emitir novo alvará Fail",
+              "fullTitle": "Manter Dados de Alvarás fail Emitir novo alvará Fail",
               "timedOut": null,
-              "duration": 30714,
+              "duration": 36957,
               "state": "failed",
               "speed": null,
               "pass": false,
               "fail": true,
               "pending": false,
-              "context": "\"assets/teste/alvaras_fail.cy.js/Manter Dados de Alvarás fail -- Emitir novo alvará ddd (failed).png\"",
-              "code": "cy.clearAllCookies();\ncy.clearAllSessionStorage();\ncy.clearAllLocalStorage();\ncy.visit('/');\ncy.login();\ncy.selecionarEntidade(\"ACADEMIA DA SAUDE: MAFRA EM FORMA\");\ncy.acessarMenu(\"Vigilância\");\ncy.acessarSubMenu(\"Vigilância Sanitária\");\ncy.acessarRotina(\"Requerimento/Protocolo\");\ncy.solicitarDocumento(\"Alvará\");\ncy.selecionarTipoAlvara(\"Alvará Inicial\");\ncy.informarDadosParaEmissaoAlvara();\ncy.validarMensagemExibida('Já existe um alvará inicial para o estabelecimento');",
+              "context": "\"assets/teste/alvaras_fail.cy.js/Manter Dados de Alvarás fail -- Emitir novo alvará Fail (failed).png\"",
+              "code": "cy.clearAllCookies();\ncy.clearAllSessionStorage();\ncy.clearAllLocalStorage();\ncy.visit('/');\ncy.login();\ncy.selecionarEntidade(\"ACADEMIA DA SAUDE: MAFRA EM FORMA\");\ncy.acessarMenu(\"Tessssst\");",
               "err": {
-                "message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.",
-                "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:6:7)",
+                "message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `//a/label[text()=\"Tessssst\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `//a/label[text()=\"Tessssst\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:17:7)",
                 "diff": null
               },
-              "uuid": "843d1933-ffa2-4bb2-b243-7b8581d50e71",
-              "parentUUID": "7ef71302-d20d-4919-bd8e-84c7ffbad139",
+              "uuid": "a062fa42-0712-4c54-a714-02573b08ed6d",
+              "parentUUID": "25f1b2e3-02ed-45b8-8597-0e87ffade91b",
               "isHook": false,
               "skipped": false
             }
@@ -145,11 +118,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "843d1933-ffa2-4bb2-b243-7b8581d50e71"
+            "a062fa42-0712-4c54-a714-02573b08ed6d"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 30714,
+          "duration": 36957,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
