@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2025-02-28T14:03:33.806Z",
-    "end": "2025-02-28T14:04:36.071Z",
-    "duration": 62265
+    "start": "2025-02-28T14:21:54.014Z",
+    "end": "2025-02-28T14:23:02.961Z",
+    "duration": 68947
   },
   "results": [
     {
-      "uuid": "210eaf31-2b62-4a9e-a6e0-f54124f8427b",
+      "uuid": "b91fdc58-6e40-440d-92cb-ebc496e4a5b4",
       "title": "",
       "fullFile": "cypress/e2e/alvaras/alvaras.cy.js",
       "file": "cypress/e2e/alvaras/alvaras.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e687d23c-869b-4135-b166-6c67f464c9ac",
+          "uuid": "5b168a49-fdb0-49ea-bf1d-3fe670bcabde",
           "title": "Manter Dados de Alvarás",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Emitir novo alvará",
               "fullTitle": "Manter Dados de Alvarás Emitir novo alvará",
               "timedOut": null,
-              "duration": 23648,
+              "duration": 27859,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.clearAllCookies();\ncy.clearAllSessionStorage();\ncy.clearAllLocalStorage();\ncy.visit('/');\ncy.login();\ncy.selecionarEntidade(\"ACADEMIA DA SAUDE: MAFRA EM FORMA\");\ncy.acessarMenu(\"Vigilância\");\ncy.acessarSubMenu(\"Vigilância Sanitária\");\ncy.acessarRotina(\"Requerimento/Protocolo\");\ncy.solicitarDocumento(\"Alvará\");\ncy.selecionarTipoAlvara(\"Alvará Inicial\");\ncy.informarDadosParaEmissaoAlvara();\ncy.validarMensagemExibida('Já existe um alvará inicial para o estabelecimento');",
               "err": {},
-              "uuid": "a3b1461a-65bb-4394-b5fc-2174d1205953",
-              "parentUUID": "e687d23c-869b-4135-b166-6c67f464c9ac",
+              "uuid": "42262c31-9cbf-4656-8669-94f23f85055e",
+              "parentUUID": "5b168a49-fdb0-49ea-bf1d-3fe670bcabde",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "a3b1461a-65bb-4394-b5fc-2174d1205953"
+            "42262c31-9cbf-4656-8669-94f23f85055e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 23648,
+          "duration": 27859,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -76,7 +76,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "3ca88ddc-862c-4720-b087-cd0bb402744e",
+      "uuid": "0705c2b7-edcd-4390-bbe3-1e408f81210e",
       "title": "",
       "fullFile": "cypress/e2e/teste/alvaras_fail.cy.js",
       "file": "cypress/e2e/teste/alvaras_fail.cy.js",
@@ -85,7 +85,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "25f1b2e3-02ed-45b8-8597-0e87ffade91b",
+          "uuid": "173d9457-ea44-41a8-8383-f923ed6ab918",
           "title": "Manter Dados de Alvarás fail",
           "fullFile": "",
           "file": "",
@@ -96,7 +96,7 @@
               "title": "Emitir novo alvará Fail",
               "fullTitle": "Manter Dados de Alvarás fail Emitir novo alvará Fail",
               "timedOut": null,
-              "duration": 36957,
+              "duration": 39409,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -109,8 +109,8 @@
                 "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `//a/label[text()=\"Tessssst\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:17:7)",
                 "diff": null
               },
-              "uuid": "a062fa42-0712-4c54-a714-02573b08ed6d",
-              "parentUUID": "25f1b2e3-02ed-45b8-8597-0e87ffade91b",
+              "uuid": "78802467-8d2a-4ac8-a498-97644abfd82e",
+              "parentUUID": "173d9457-ea44-41a8-8383-f923ed6ab918",
               "isHook": false,
               "skipped": false
             }
@@ -118,11 +118,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "a062fa42-0712-4c54-a714-02573b08ed6d"
+            "78802467-8d2a-4ac8-a498-97644abfd82e"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 36957,
+          "duration": 39409,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
