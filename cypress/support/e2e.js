@@ -36,6 +36,7 @@ Cypress.on("test:after:run", (test, runnable) => {
   const caminho = Cypress.spec.relative;
   const posicaoE2E = caminho.indexOf('e2e');
   const caminhoDinamico = caminho.substring(posicaoE2E + 4);
+  console.log(caminhoDinamico);
 
   if (test.state === "failed") {
     const screenshot = `assets/${caminhoDinamico}/${runnable.parent.title} -- ${test.title} (failed).png`;
