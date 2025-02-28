@@ -75,7 +75,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
-          command: npx cypress run --spec cypress/specs/${{ github.event.inputs.feature }}/*.js --browser electron --headless
+          command: npx cypress run --spec cypress/e2e/${{ github.event.inputs.feature }}/*.js --browser electron --headless
         env:
           password: ${{secrets.password}}
 
