@@ -12,13 +12,13 @@
     "hasOther": false,
     "skipped": 0,
     "hasSkipped": false,
-    "start": "2025-02-28T00:55:42.272Z",
-    "end": "2025-02-28T00:57:22.846Z",
-    "duration": 100574
+    "start": "2025-02-28T13:59:35.740Z",
+    "end": "2025-02-28T14:01:14.445Z",
+    "duration": 98705
   },
   "results": [
     {
-      "uuid": "0bd6b0aa-3504-4453-8368-9b9c53e2b66f",
+      "uuid": "85d21142-6ceb-47ba-9854-98b0dea4ca5d",
       "title": "",
       "fullFile": "cypress/e2e/alvaras/alvaras.cy.js",
       "file": "cypress/e2e/alvaras/alvaras.cy.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "622b665e-163d-43e3-84fc-e4bc9a445162",
+          "uuid": "e688eb9c-fdcf-4cdb-859d-340e2923f894",
           "title": "Manter Dados de Alvarás",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Emitir novo alvará",
               "fullTitle": "Manter Dados de Alvarás Emitir novo alvará",
               "timedOut": null,
-              "duration": 32214,
+              "duration": 32079,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -51,8 +51,8 @@
                 "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:6:7)",
                 "diff": null
               },
-              "uuid": "3e855161-039c-4446-8273-b182caa5f702",
-              "parentUUID": "622b665e-163d-43e3-84fc-e4bc9a445162",
+              "uuid": "0d755bbd-e4aa-4404-9f17-bc806869f616",
+              "parentUUID": "e688eb9c-fdcf-4cdb-859d-340e2923f894",
               "isHook": false,
               "skipped": false
             },
@@ -60,7 +60,7 @@
               "title": "Emitir novo alvará falhar teste",
               "fullTitle": "Manter Dados de Alvarás Emitir novo alvará falhar teste",
               "timedOut": null,
-              "duration": 31113,
+              "duration": 30898,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -73,8 +73,8 @@
                 "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:6:7)",
                 "diff": null
               },
-              "uuid": "ad1a20c4-de79-4c6a-8236-5dd0ae6237ff",
-              "parentUUID": "622b665e-163d-43e3-84fc-e4bc9a445162",
+              "uuid": "912385a7-6820-4261-bff5-cd263ff7221f",
+              "parentUUID": "e688eb9c-fdcf-4cdb-859d-340e2923f894",
               "isHook": false,
               "skipped": false
             }
@@ -82,12 +82,12 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "3e855161-039c-4446-8273-b182caa5f702",
-            "ad1a20c4-de79-4c6a-8236-5dd0ae6237ff"
+            "0d755bbd-e4aa-4404-9f17-bc806869f616",
+            "912385a7-6820-4261-bff5-cd263ff7221f"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 63327,
+          "duration": 62977,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -103,7 +103,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "9b74ec7f-1a16-4ba0-b412-60e58ebddb81",
+      "uuid": "f6baac59-9033-41a0-883d-3525a56e1cea",
       "title": "",
       "fullFile": "cypress/e2e/teste/alvaras_fail.cy.js",
       "file": "cypress/e2e/teste/alvaras_fail.cy.js",
@@ -112,7 +112,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "ca39f562-2069-437e-bdae-1e35822d22fc",
+          "uuid": "7ef71302-d20d-4919-bd8e-84c7ffbad139",
           "title": "Manter Dados de Alvarás fail",
           "fullFile": "",
           "file": "",
@@ -123,7 +123,7 @@
               "title": "Emitir novo alvará ddd",
               "fullTitle": "Manter Dados de Alvarás fail Emitir novo alvará ddd",
               "timedOut": null,
-              "duration": 31114,
+              "duration": 30714,
               "state": "failed",
               "speed": null,
               "pass": false,
@@ -136,8 +136,8 @@
                 "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:6:7)",
                 "diff": null
               },
-              "uuid": "6ba0d99b-4a6c-4eb7-a587-6c5255470ad9",
-              "parentUUID": "ca39f562-2069-437e-bdae-1e35822d22fc",
+              "uuid": "843d1933-ffa2-4bb2-b243-7b8581d50e71",
+              "parentUUID": "7ef71302-d20d-4919-bd8e-84c7ffbad139",
               "isHook": false,
               "skipped": false
             }
@@ -145,11 +145,11 @@
           "suites": [],
           "passes": [],
           "failures": [
-            "6ba0d99b-4a6c-4eb7-a587-6c5255470ad9"
+            "843d1933-ffa2-4bb2-b243-7b8581d50e71"
           ],
           "pending": [],
           "skipped": [],
-          "duration": 31114,
+          "duration": 30714,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
