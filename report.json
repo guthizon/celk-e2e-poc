@@ -1,0 +1,135 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 0,
+    "pending": 0,
+    "failures": 2,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false,
+    "start": "2025-02-28T00:22:11.123Z",
+    "end": "2025-02-28T00:23:15.703Z",
+    "duration": 64580
+  },
+  "results": [
+    {
+      "uuid": "d83b2209-01b6-435c-8e2f-be6fd14f9580",
+      "title": "",
+      "fullFile": "cypress/e2e/alvaras/alvaras.cy.js",
+      "file": "cypress/e2e/alvaras/alvaras.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b2d7f0ca-f68b-4d48-89d4-8722db8860ea",
+          "title": "Manter Dados de Alvarás",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Emitir novo alvará",
+              "fullTitle": "Manter Dados de Alvarás Emitir novo alvará",
+              "timedOut": null,
+              "duration": 31695,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"assets/alvaras/alvaras.cy.js/Manter Dados de Alvarás -- Emitir novo alvará (failed).png\"",
+              "code": "cy.clearAllCookies();\ncy.clearAllSessionStorage();\ncy.clearAllLocalStorage();\ncy.visit('/');\ncy.login();\ncy.selecionarEntidade(\"ACADEMIA DA SAUDE: MAFRA EM FORMA\");\ncy.acessarMenu(\"Vigilância\");\ncy.acessarSubMenu(\"Vigilância Sanitária\");\ncy.acessarRotina(\"Requerimento/Protocolo\");\ncy.solicitarDocumento(\"Alvará\");\ncy.selecionarTipoAlvara(\"Alvará Inicial\");\ncy.informarDadosParaEmissaoAlvara();\ncy.validarMensagemExibida('Já existe um alvará inicial para o estabelecimento');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:6:7)",
+                "diff": null
+              },
+              "uuid": "286585e1-278e-421e-984c-d8aae2a770c7",
+              "parentUUID": "b2d7f0ca-f68b-4d48-89d4-8722db8860ea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Emitir novo alvará falhar teste",
+              "fullTitle": "Manter Dados de Alvarás Emitir novo alvará falhar teste",
+              "timedOut": null,
+              "duration": 31014,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "\"assets/alvaras/alvaras.cy.js/Manter Dados de Alvarás -- Emitir novo alvará falhar teste (failed).png\"",
+              "code": "cy.clearAllCookies();\ncy.clearAllSessionStorage();\ncy.clearAllLocalStorage();\ncy.visit('/');\ncy.login();\ncy.selecionarEntidade(\"ACADEMIA DA SAUDE: MAFRA EM FORMA\");\ncy.acessarMenu(\"tesssste\");\ncy.acessarSubMenu(\"Vigilância Sanitária\");\ncy.acessarRotina(\"Requerimento/Protocolo\");\ncy.solicitarDocumento(\"Alvará\");\ncy.selecionarTipoAlvara(\"Alvará Inicial\");\ncy.informarDadosParaEmissaoAlvara();\ncy.validarMensagemExibida('Já existe um alvará inicial para o estabelecimento');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.",
+                "estack": "AssertionError: Timed out retrying after 30000ms: Expected to find element: `[name=\"login\"]`, but never found it.\n    at Context.eval (webpack://celk-e2e-tests/./cypress/support/commands.js:6:7)",
+                "diff": null
+              },
+              "uuid": "60a1c638-3cf1-4364-839c-de961977a02a",
+              "parentUUID": "b2d7f0ca-f68b-4d48-89d4-8722db8860ea",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "286585e1-278e-421e-984c-d8aae2a770c7",
+            "60a1c638-3cf1-4364-839c-de961977a02a"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 62709,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[name]-report",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "reportFilename": "[name]-report",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
